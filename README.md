@@ -1,5 +1,5 @@
 <h1 align="center"> App-Tronix-Store <h1/>  
-<h3>APPTRONIX-STORE . Basically this is an ecommerce website where user can buy only Apple products like , "MOBILE" , "LAPTOP" , "IPAD" .</h3>
+<h3>APPTRONIX-STORE . Basically this is an ecommerce website where user can buy Apple products like , "MOBILE" , "LAPTOP" , "IPAD" . apply filters as per your need and in just a few clicks you can buy any products from the website .</h3>
   
 ## Features
 - Login/Signup User Account
