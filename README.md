@@ -66,7 +66,7 @@
 
 If you want to contact me, you can reach me through below handles.
 
-[![linkedin](https://img.shields.io/badge/Ritika_Gupta-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manish-reddy-76063a222/)
+[![linkedin](https://img.shields.io/badge/Manish-Reddy-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manish-reddy-76063a222/)
 
 
 
