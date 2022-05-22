@@ -1,0 +1,86 @@
+.navbar-nav li a{
+  font-size: 30px;
+}
+.navbar-brand{
+  letter-spacing: 5px;
+}
+.card{
+  transition: all 0.5s ease;
+}
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.sortbtn{
+  display: flex;
+  justify-content: space-around;
+}
+.cont2{
+  height: 600px;
+  width: 1700px;
+  display: flex;
+  margin-top: 1%;
+  margin-left: 6.5%;
+}
+.cont2in{
+  width: 32%;
+  height: 100%;
+  margin-right: 2%;
+ 
+ 
+}
+.cont2in>img{
+  border-radius: 38px;
+  cursor: pointer;
+}
+.cont2in>h3{
+  justify-content: space-around;
+  padding: 20px 220px 12px;
+
+}
+.center{
+text-align: center;
+margin-top: 1%;
+}
+.images{
+  margin-top: 5%;
+}
+.carousel-inner{
+  cursor: pointer;
+}
+.product img{
+  margin-top: 11%;
+  transition: all 0.5s ease;
+
+}
+.product img:hover{
+  transform: scale(1.1);
+}
+.foter{
+  margin-top: 2%;
+  background-color: black;
+  color: white;
+}
+.container2{
+  display: flex;
+  width: 92%;
+  margin: auto
+}
+.container2>div{
+  /* border: solid red; */
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.container2in{
+  width: 50%;
+  margin-right: 2%;
+}
+.container2in>img{
+  border-radius: 4%;
+}
+/* .box{
+  width: 60%;
+  margin: auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+} */
