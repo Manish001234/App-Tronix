@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td><h4>Ipads</h4><img src="https://cdn-images-1.medium.com/max/1000/1*4u8MLHfWNEdww5Lhu9R6WQ.png" alt="ipad" /></td>
-    <td><h4>Ipad Description</h4><img src=https://cdn-images-1.medium.com/max/1000/1*J7OZvMvALkHuVmEVO4IB0w.png" alt="ipad-details" /></td>
+    <td><h4>Ipad Description</h4><img src="https://cdn-images-1.medium.com/max/1000/1*J7OZvMvALkHuVmEVO4IB0w.png" alt="ipad-details" /></td>
   </tr>
   <tr>
     <td><h4>Cart</h4><img src="https://cdn-images-1.medium.com/max/1000/1*ZAAjtPZftvcFyjUlUwDxYw.png" alt="cart" /></td>
