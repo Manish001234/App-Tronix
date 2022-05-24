@@ -12,8 +12,8 @@ function Navbar({setLog,log}) {
   }
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid py-3">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div className="container-fluid">
           <button
             className="navbar-toggler"
             type="button"
@@ -28,28 +28,28 @@ function Navbar({setLog,log}) {
           <div style={{display: "flex",justifyContent: "space-between"}} className="collapse navbar-collapse" id="navbarSupportedContent">
             <div>
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                   <Link className="nav-link" to="/">
                   <span className=""></span>
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link" to="/mobiles">
+                  <Link className="nav-link active" to="/mobiles">
                   Mobile
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/laptops">
+                  <Link className="nav-link active" aria-current="page" to="/laptops">
                     Laptop
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/Ipads">
+                  <Link className="nav-link active" aria-current="page" to="/Ipads">
                     Ipad
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/About">
+                  <Link className="nav-link active" to="/About">
                     About
                   </Link>
                 </li>

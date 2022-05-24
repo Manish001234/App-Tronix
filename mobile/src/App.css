@@ -1,8 +1,8 @@
 .navbar-nav li a{
-  font-size: 30px;
+  font-size: 22px;
 }
 .navbar-brand{
-  letter-spacing: 5px;
+  letter-spacing: 6px;
 }
 .card{
   transition: all 0.5s ease;
@@ -83,4 +83,10 @@ margin-top: 1%;
 text-align: center;
  margin-top: 2%;
   
+}
+.carousal{
+  margin-top: 1%;
+}
+.payment{
+  text-align: center;
 }

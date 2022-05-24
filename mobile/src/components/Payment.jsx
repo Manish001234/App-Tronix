@@ -16,7 +16,7 @@ export const Payment = () => {
       <div className='box'>
     <div className='container my-5'>
        
-              <h1>Payment</h1>
+              <h1 className="payment">Payment</h1>
 
               <div className="my-3">
                 <div className="form-check">
@@ -126,7 +126,7 @@ export const Payment = () => {
                {/* <button className=" btn btn-primary btn-lg" type="submit">
                  Place Order
               </button> */}
-         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#thankyouModal">
+         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#thankyouModal">
          Place Order
     </button>
     <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -141,7 +141,7 @@ export const Payment = () => {
          
           </div>
           <div class="modal-footer">
-            <button onClick={()=>handlePayment()} type="button" data-bs-dismiss="modal" class="btn btn-primary">Continue Shopping</button>
+            <button onClick={()=>handlePayment()} type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Continue Shopping</button>
            
 
           </div>

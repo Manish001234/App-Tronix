@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+
 
 function About() {
   return (
@@ -37,7 +37,7 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer></Footer>
+    
     </>
   );
 }
