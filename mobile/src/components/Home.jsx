@@ -35,13 +35,13 @@ function Home() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img  onClick={()=>{navigate("/mobiles")}} src="/homeimg/img1-unsplash.jpg" class="d-block w-100" alt="iphone" height="630px"/>
+            <img  onClick={()=>{navigate("/mobiles")}} src="/homeimg/img1-unsplash.jpg" class="d-block w-100" alt="iphone" height="560px"/>
           </div>
           <div class="carousel-item">
-            <img onClick={()=>{navigate("/Ipads")}} src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-og-202203?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1645658178919" class="d-block w-100" alt="iphone" height="630px"/>
+            <img onClick={()=>{navigate("/Ipads")}} src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-og-202203?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1645658178919" class="d-block w-100" alt="iphone" height="560px"/>
           </div>
           <div class="carousel-item">
-            <img onClick={()=>{navigate("/laptops")}} src="https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?resize=1024,512" class="d-block w-100" alt="iphone" height="630px" />
+            <img onClick={()=>{navigate("/laptops")}} src="https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg?resize=1024,512" class="d-block w-100" alt="iphone" height="560px" />
           </div>
         </div>
         <button
