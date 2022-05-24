@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState,useEffect} from 'react';
 import Product from './mobile';
 import axios from 'axios';
-import Footer from './Footer';
+
 import { useDispatch } from 'react-redux';
 import {addItem,delItem} from "../redux/actions/index"
 
@@ -51,7 +51,7 @@ const MobileDisplay = () => {
                      </div>
             </div>
         </div>
-        <Footer></Footer>
+
     </div>
   )
 }

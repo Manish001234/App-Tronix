@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState,useEffect} from 'react';
 import { Laptop } from './laptop';
 import axios from 'axios';
-import Footer from './Footer';
+
 import { useDispatch } from 'react-redux';
 import {addItem,delItem} from "../redux/actions/index"
 
@@ -52,7 +52,7 @@ function LapDisplay() {
                      </div>
             </div>
         </div>
-        <Footer></Footer>
+    
     </div>
   )
 }

@@ -2,16 +2,18 @@ import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import Footer from './Footer';
+
 
 
 export const Laptop = () => {
     const [data, setData]=useState([])
     const [filtering,setFiltering]=useState([])
+    const [load , setLoad] = useState(null)
     const getData=()=>{
         axios.get('https://backend1242.herokuapp.com/laptops').then((res)=>{            
             setData(res.data)
             setFiltering(res.data)
+            setLoad(res.data)
         })
     }
     useEffect(()=>{
@@ -81,10 +83,14 @@ export const Laptop = () => {
           </div>
           <div className="container">
               <div className="row justify-content-around">
-                  {data.map(carditem)}
+              {
+                load?
+                data.map(carditem)
+                :<h2 className="load">loading...</h2> 
+              }
               </div>
             </div>
-            <Footer></Footer>
+           
         </>
       );
 }

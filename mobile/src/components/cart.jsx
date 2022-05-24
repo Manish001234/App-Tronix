@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { delItem } from '../redux/actions/index';
 import {updateaddd} from "../redux/actions/index";
-import Footer from './Footer';
+
 
 function Cart() {
     const state = useSelector((state)=>state.addItems)
@@ -63,7 +63,7 @@ function Cart() {
   {state.length===0 && emptyCart() }
   {state.length !==0 && state.map(cartItems)}
   {state.length !==0 && button()}
-  <Footer></Footer>
+
 </>
     
  

@@ -2,17 +2,19 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
+
 
 
 function Product() {
 
   const [data, setData]=useState([])
   const [filtering,setFiltering]=useState([])
+  const [load , setLoad] = useState(null)
   const getData=()=>{
       axios.get('https://backend1242.herokuapp.com/mobiles').then((res)=>{
           setData(res.data)
           setFiltering(res.data)
+          setLoad(res.data)
       })
   }
   useEffect(()=>{
@@ -76,18 +78,20 @@ function Product() {
             <option value="iphone 13">Iphone 13</option>
             <option value="iphone 13 pro max">Iphone 13 Pro Max</option>
           </select>
-        {/* <button className="btn btn-outline-primary" onClick={()=>handlesort()}>sort</button> */}
-       {/* <button className="btn btn-outline-primary">filter</button> */}
                </div>
             </div>
           </div>
         </div>
         <div className="container">
             <div className="row justify-content-around">
-                {data.map(carditem)}
+                {
+                load?
+                data.map(carditem)
+                :<h2 className="load">loading...</h2> 
+              }
             </div>
           </div>
-          <Footer></Footer>
+          
       </>
     );
   }

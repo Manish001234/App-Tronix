@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CartBtn from "../buttons/CartBtn";
-// import Cart from "../buttons/Cart";
+
 
 
 function Navbar({setLog,log}) {
