@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from 'react-redux';
 import {addItem,delItem} from "../redux/actions/index"
-function IpadDisplay() {
+function IpadDisplay({log}) {
     const ipad = useParams();
     const [data, setData]=useState([])
     const[cartBtn,setcartBtn]=useState("Add To Cart")
@@ -47,29 +47,55 @@ function IpadDisplay() {
                          <hr />
                          <h2 className='my-4' >Rs - {data.price}</h2>
                          <p className='lead'>{data.desc}</p>
-                         <button onClick={()=>handleCart(data)} className='btn btn-outline-primary my-5'  data-bs-toggle="modal" data-bs-target="#thankyouModal">{cartBtn}</button>
+                         {log ? <div>
+                            <button onClick={()=>handleCart(data)} className='btn btn-outline-primary my-5'  data-bs-toggle="modal" data-bs-target="#thankyouModal">{cartBtn}</button>
                                
-                         <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                               <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                          <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">CONGRATULATIONS.</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              Item successfully added to cart
+                                          
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button onClick={()=>{
+                                                  navigate("/cart")
+                                              }}  type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Go to cart</button>
+                                          
+      
+                                          </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                         </div> :
+                            <div>
+                                 <button className='btn btn-outline-primary my-5'  data-bs-toggle="modal" data-bs-target="#thankyouModal">Add To Cart</button>
+                                <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">CONGRATULATIONS.</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Login First</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Item successfully added to cart
+                                        Please login to your account !
                                     
                                     </div>
                                     <div class="modal-footer">
                                         <button onClick={()=>{
-                                            navigate("/cart")
-                                        }}  type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Go to cart</button>
+                                            navigate("/Login")
+                                        }}  type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Go to Login</button>
                                     
 
                                     </div>
                                     </div>
                                 </div>
                             </div>
+                            </div> }
                      </div>
             </div>
         </div>

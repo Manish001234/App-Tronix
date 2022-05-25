@@ -36,13 +36,13 @@ function App() {
       <Route path='/About' element={<About/>} />
 
       <Route path='/mobiles' element={<Product/>} />
-      <Route path='/mobiles/:id' element={<MobileDisplay/>} />
+      <Route path='/mobiles/:id' element={<MobileDisplay log={log}/>} />
 
       <Route path='/laptops' element={<Laptop/>} />
-      <Route path='/laptops/:id' element={<LapDisplay/>} />
+      <Route path='/laptops/:id' element={<LapDisplay log={log}/>} />
 
       <Route path='/Ipads' element={<Ipad/>} />
-      <Route path='/Ipads/:id' element={<IpadDisplay/>} />
+      <Route path='/Ipads/:id' element={<IpadDisplay log={log}/>} />
 
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />

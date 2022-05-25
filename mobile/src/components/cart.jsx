@@ -14,26 +14,25 @@ function Cart() {
     }
     const cartItems =(cartItem)=>{
         return (
-            <div className="px-4 my-5 bg-light rounded-3" key = {cartItem.id} >
-            <div className="container py-4">
-                <button onClick={()=>handleClose(cartItem)} className='btn btn-outline-primary ms-2 float-end' >Delete</button>
-                    <div className="row justify-content-center">
-                        <div style={{width:"380px"}} className="col-mid-1">
-                            <img height="200px" width="180px" src={cartItem.img} alt="" />
-                        </div>
-                        <div className="col-md-4">
-                            <h3>{cartItem.title}</h3>
-                            <p className='lead fw-bold'>Rs : {cartItem.price}</p>
-                        </div>
-                        <div className="col-md-4">
-                            <button onClick={() => dispatch(updateaddd(cartItem,state,1))}  className="plus btn-outline-primary" >+</button>
-                            <span style={{fontSize:"25px",margin:"0px 10px"}}>{cartItem.quantity}</span>
-                            <button onClick={() => dispatch(updateaddd(cartItem,state,-1))} className="plus btn-outline-primary">-</button>
-                        </div>
+            <div className="px-4 my-4 bg-light" key = {cartItem.id} >
+                <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",height:'220px'}}>
+                    <div style={{width:"200px"}}>
+                        <img height="200px" width="180px" src={cartItem.img} alt="" />
                     </div>
-                
+                    <div style={{width:"15%"}}>
+                        <h3>{cartItem.title}</h3>
+                        <p className='lead fw-bold'>Rs : {cartItem.price}</p>
+                    </div>
+                    <div>
+                        <button onClick={() => dispatch(updateaddd(cartItem,state,1))}  className="plus btn-outline-primary" >+</button>
+                        <span style={{fontSize:"25px",margin:"0px 10px"}}>{cartItem.quantity}</span>
+                        <button onClick={() => dispatch(updateaddd(cartItem,state,-1))} className="plus btn-outline-primary">-</button>
+
+                    </div>
+                    <div  style={{fontSize:"25px",width:"180px"}}>Total : {(+cartItem.quantity)*(+(cartItem.price.split(",").join("")))}</div>
+                    <div><button onClick={()=>handleClose(cartItem)} className='btn btn-outline-primary ms-2 float-end' >Delete</button></div>
+                </div>
             </div>
-        </div>
         )
     }
     const button=()=>{
