@@ -67,15 +67,15 @@ function Home() {
       <div className="cont2" style={{width:"90%",height:"500px",margin:"auto"}}>
         
            <div className="cont2in" >
-             <img onClick={()=>{navigate("/mobiles")}} height="100%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/iphone/thumbnail-1647932502_0919.png" alt="" />
+             <img onClick={()=>{navigate("/mobiles")}} height="90%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/iphone/thumbnail-1647932502_0919.png" alt="" />
              <h3>Mobile</h3>
            </div>
            <div className="cont2in">
-            <img onClick={()=>{navigate("/laptops")}} height="100%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/mac/thumbnail-1622643147_1503.png" alt="" />
+            <img onClick={()=>{navigate("/laptops")}} height="90%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/mac/thumbnail-1622643147_1503.png" alt="" />
             <h3>Laptop</h3>
            </div>
            <div className="cont2in">
-            <img onClick={()=>{navigate("/Ipads")}} height="100%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/ipad/thumbnail-1622643123_7395.png" alt="" />
+            <img onClick={()=>{navigate("/Ipads")}} height="90%" width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/categories/ipad/thumbnail-1622643123_7395.png" alt="" />
             <h3>Tab</h3>
            </div>
            

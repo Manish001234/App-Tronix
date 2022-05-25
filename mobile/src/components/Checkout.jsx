@@ -12,9 +12,9 @@ const Checkout = () => {
         return(
             <li className="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 className="my-0">{item.title}</h6>
+              <h5 className="my-0">{item.title}</h5>
             </div>
-            <span className="text-muted">Rs {a} <b>({item.quantity}) qty</b></span>
+            <span className="text-muted">₹ {a} <b>({item.quantity})</b></span>
           </li>
         )
     }
@@ -49,7 +49,7 @@ const Checkout = () => {
             </form>
           </div>
           <div className="col-md-7 col-lg-8">
-            <h4 className="mb-3">Billing address</h4>
+            <h4 className="mb-3 ">Billing address</h4>
             <form className="needs-validation" novalidate="">
               <div className="row g-3">
                 <div className="col-sm-6">

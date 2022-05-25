@@ -59,7 +59,7 @@ const Ipad = () => {
       return (
         <>
         
-          <div className="container py-5">
+          <div className="container py-4">
             <div className="row">
               <div className="col-12 text-center">
                 <h1>Ipad</h1>

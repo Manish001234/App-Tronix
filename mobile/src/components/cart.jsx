@@ -18,7 +18,7 @@ function Cart() {
             <div className="container py-4">
                 <button onClick={()=>handleClose(cartItem)} className='btn btn-outline-primary ms-2 float-end' >Delete</button>
                     <div className="row justify-content-center">
-                        <div style={{width:"200px"}} className="col-mid-1">
+                        <div style={{width:"380px"}} className="col-mid-1">
                             <img height="200px" width="180px" src={cartItem.img} alt="" />
                         </div>
                         <div className="col-md-4">
@@ -26,9 +26,9 @@ function Cart() {
                             <p className='lead fw-bold'>Rs : {cartItem.price}</p>
                         </div>
                         <div className="col-md-4">
-                            <button onClick={() => dispatch(updateaddd(cartItem,state,1))} style={{width:"30px",height:"30px",fontSize:"15px"}}>+</button>
+                            <button onClick={() => dispatch(updateaddd(cartItem,state,1))}  className="plus btn-outline-primary" >+</button>
                             <span style={{fontSize:"25px",margin:"0px 10px"}}>{cartItem.quantity}</span>
-                            <button onClick={() => dispatch(updateaddd(cartItem,state,-1))} style={{width:"30px",height:"30px",fontSize:"15px"}}>-</button>
+                            <button onClick={() => dispatch(updateaddd(cartItem,state,-1))} className="plus btn-outline-primary">-</button>
                         </div>
                     </div>
                 

@@ -41,9 +41,10 @@
 .center{
 text-align: center;
 margin-top: 1%;
+margin-bottom: 1%;
 }
 .images{
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .carousel-inner{
   cursor: pointer;
@@ -90,3 +91,9 @@ text-align: center;
 .payment{
   text-align: center;
 }
+
+.plus{
+  background-color: transparent;
+  border-radius: 20%;
+}
+
