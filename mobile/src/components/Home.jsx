@@ -81,7 +81,7 @@ function Home() {
            
       </div>
       <div className="images">
-      <img onClick={()=>{navigate("/Ipads")}} width="100%" src="https://www.aptronixindia.com/media/slidebanner/i/p/ipad_9th_gen_desktop.png" alt="" />
+      <img onClick={()=>{navigate("/mobiles")}} width="100%" src="https://i3-prod-assets.indiaistore.com/files/uploads/banners/home-page-hero/banner_1652556493_5976.jpg" alt="" />
   
       </div>
       <h1 className="center">Trending</h1>
