@@ -28,14 +28,16 @@ function LapDisplay({log}) {
     },[])
     const dispatch = useDispatch()
     const handleCart=(data)=>{
-       if(cartBtn === 'Add To Cart'){
-           dispatch(addItem(data))
-        //    setcartBtn("Remove from cart")
-       }
-       else{
-        dispatch(delItem(data))
-           setcartBtn("Add To Cart")
-       }
+        if(log){
+            if(cartBtn === 'Add To Cart'){
+                dispatch(addItem(data))
+                setcartBtn("Remove from cart")
+            }
+            else{
+             dispatch(delItem(data))
+                setcartBtn("Add To Cart")
+            }
+           }
     }
   return (
     <div>
@@ -49,31 +51,9 @@ function LapDisplay({log}) {
                          <hr />
                          <h2 className='my-4' >Rs - {data.price}</h2>
                          <p className='lead'>{data.desc}</p>
-                         {log ? <div>
-                            <button onClick={()=>handleCart(data)} className='btn btn-outline-primary my-5'  data-bs-toggle="modal" data-bs-target="#thankyouModal">{cartBtn}</button>
-                               
-                               <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog">
-                                          <div class="modal-content">
-                                          <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLabel">CONGRATULATIONS.</h5>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                          </div>
-                                          <div class="modal-body">
-                                              Item successfully added to cart
-                                          
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button onClick={()=>{
-                                                  navigate("/cart")
-                                              }}  type="button" data-bs-dismiss="modal" class="btn btn-outline-primary">Go to cart</button>
-                                          
-      
-                                          </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                         </div> :
+                         {log ? 
+                            <button onClick={()=>handleCart(data)} className='btn btn-outline-primary my-5' >{cartBtn}</button>
+                                :
                             <div>
                                  <button className='btn btn-outline-primary my-5'  data-bs-toggle="modal" data-bs-target="#thankyouModal">Add To Cart</button>
                                 <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
