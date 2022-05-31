@@ -97,3 +97,53 @@ text-align: center;
   border-radius: 20%;
 }
 
+.paydiv{
+  height: 600px;
+  width: 70%;
+  
+}
+
+#mypay{
+  margin-top: 2%;
+  margin-bottom: 9%;
+  font-size: 33px;
+}
+
+.paymentBox{
+  margin: auto;
+  padding: 2% 4%;
+  width: 30%;
+  height: 530px;
+  margin-top: 2%;
+  text-align: center;
+  border: 2px dotted black
+  /* background: rgb(249,241,204); */
+  /* background: radial-gradient(circle, rgb(230, 253, 255) 26%, rgb(112, 180, 185) 100%); */
+}
+
+#paymentBtn{
+  margin-top: 5%;
+  padding: 3% 15%;
+  margin: auto;
+  background-color:transparent;
+  color: blue;
+  border: 1px solid blue;
+  
+  
+}
+#paymentBtn:hover{
+  background-color: rgb(79, 108, 223);
+  color: white;
+}
+.paySuccess{
+  width: 60%;
+  margin: auto;
+  height: 500px;
+  margin-top: 1%;
+
+
+}
+#bt{
+  text-align: center;
+  
+}

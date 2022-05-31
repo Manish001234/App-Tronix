@@ -16,6 +16,7 @@ import Login from './buttons/Login';
 import SignUp from './buttons/SignUp';
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
+import { Paymentdone } from './components/Paymentdone';
 
 
 function App() {
@@ -47,6 +48,8 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/Payment" element={<Payment/>} />
+      <Route path="/Paymentdone" element={<Paymentdone/>} />
+
 
     </Routes> 
     <Footer></Footer>

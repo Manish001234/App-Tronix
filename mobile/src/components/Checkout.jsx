@@ -62,7 +62,7 @@ const Checkout = () => {
                     id="firstName"
                     placeholder=""
                     value=""
-                    required=""
+                    required="true"
                   />
                   <div className="invalid-feedback">
                     Valid first name is required.
