@@ -1,8 +1,8 @@
-import {addItems} from "./addItem";
+import {addItems, reducer} from "./addItem";
 import {combineReducers} from "redux";
 
 const rootReducers = combineReducers({
-    addItems
+    item:addItems, reduce:reducer
 })
 
 

@@ -2,23 +2,20 @@ import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-
+import { ipads_api } from '../redux/actions';
+import {loading} from "../redux/actions/index"
+import { useDispatch, useSelector } from 'react-redux';
 
 const Ipad = () => {
-    const [data, setData]=useState([])
+   
     const [filtering,setFiltering]=useState([])
-    const [load , setLoad] = useState(null)
-    const getData=()=>{
-        axios.get('https://backend1242.herokuapp.com/Ipads').then((res)=>{
-          console.log(res.data)
-            setData(res.data)
-            setFiltering(res.data)
-            setLoad(res.data)
-        })
-    }
+    const {products,loading}= useSelector((store) => store.reduce);
+    const dispatch = useDispatch();
+     
     useEffect(()=>{
-        getData();
+      dispatch(ipads_api())
     },[])
+
   
     const carditem=(item)=>{
       return(
@@ -88,10 +85,11 @@ const Ipad = () => {
           <div className="container">
               <div className="row justify-content-around">
               {
-                load?
-                data.map(carditem)
-                :<h2 className="load">Loading...</h2> 
-              }
+                loading?(<h2 className="load">loading...</h2> ):
+                (
+                products.map(carditem)
+              
+              )}
               </div>
             </div>
       

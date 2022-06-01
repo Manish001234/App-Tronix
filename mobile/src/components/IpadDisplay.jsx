@@ -4,27 +4,23 @@ import { useState,useEffect} from 'react';
 import Ipad from './Ipad';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { ipad_id } from '../redux/actions/index';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {addItem,delItem} from "../redux/actions/index"
 function IpadDisplay({log}) {
     const ipad = useParams();
     const [data, setData]=useState([])
     const[cartBtn,setcartBtn]=useState("Add To Cart")
     const navigate = useNavigate();
-    const getData=()=>{
-        axios.get(`https://backend1242.herokuapp.com/Ipads/${ipad.id}`).then((res)=>{
-            setData(res.data)
-            console.log(res.data)
-           
-        }).catch((e)=>{
-          console.log(e)
-        })
-    }
-    useEffect(()=>{
-        getData();
-    },[])
     const dispatch = useDispatch()
+    
+    const product=useSelector((store)=>store.reduce.product)
+    const {id} =useParams();
+
+    useEffect(()=>{
+      dispatch(ipad_id(id))
+    },[])
     const handleCart=(data)=>{
         if(log){
             if(cartBtn === 'Add To Cart'){
@@ -42,15 +38,15 @@ function IpadDisplay({log}) {
         <div className="container my-5 py-1" >
             <div className="row">
                      <div className="col-md-6 d-flex justify-content-center mmx-auto product">
-                         <img src={data.img} alt="" height="400px"  />
+                         <img src={product.img} alt="" height="400px"  />
                      </div>   
                      <div className="col-md-6 d-flex flex-column justify-cuntent-center">
-                         <h1 className='display-5 fw-bold' >{data.title}</h1>
+                         <h1 className='display-5 fw-bold' >{product.title}</h1>
                          <hr />
-                         <h2 className='my-4' >Rs - {data.price}</h2>
-                         <p className='lead'>{data.desc}</p>
+                         <h2 className='my-4' >Rs - {product.price}</h2>
+                         <p className='lead'>{product.desc}</p>
                          {log ? 
-                            <button onClick={()=>handleCart(data)} className='btn btn-outline-primary my-5'>{cartBtn}</button>
+                            <button onClick={()=>handleCart(product)} className='btn btn-outline-primary my-5'>{cartBtn}</button>
                                
                                :
                             <div>

@@ -31,6 +31,7 @@ const Login = ({setLog}) => {
         setHidden(data)
         localStorage.setItem("app", JSON.stringify(data));
         setLog(true)
+        alert("Successfully Loged-In")
         navigate("/")
       })
     }

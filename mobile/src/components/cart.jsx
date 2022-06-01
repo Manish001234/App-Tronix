@@ -7,7 +7,9 @@ import {updateaddd} from "../redux/actions/index";
 
 
 function Cart() {
-    const state = useSelector((state)=>state.addItems)
+//    useSelector((store)=>store.item.addItem)
+   const state =  useSelector((store)=>store.item)
+   console.log(state,"state")
     const dispatch=useDispatch()
     const handleClose=(item)=>{
         dispatch(delItem(item))

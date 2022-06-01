@@ -11,6 +11,7 @@ const loggerMiddleware = (store)=>(next)=>(action)=>{
 }
 
 const store=legacy_createStore(rootReducers,applyMiddleware(loggerMiddleware));
+console.log(store.getState())
 
 
 

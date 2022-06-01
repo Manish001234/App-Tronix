@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const Checkout = () => {
-    const state = useSelector((state)=>state.addItems)
+    const state = useSelector((store)=>store.item)
     var total = 0;
     const itemList=(item)=>{
       let a = item.price.split(",").join("");
