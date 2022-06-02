@@ -10,15 +10,47 @@ import {loading} from "../redux/actions/index"
 
 
 export const Laptop = () => {
-    const [filtering,setFiltering]=useState([])
-    const {products,loading} = useSelector((store) => store.reduce);
-    const dispatch = useDispatch();
 
+    const {products,loading} = useSelector((store) => store.laptops);
+    const [laptopdata,setLaptopdata]=useState([...products])
+    
+    const dispatch = useDispatch();
+    
     useEffect(()=>{
       dispatch(laptops_api())
-    },[])
-  
-    const carditem=(item)=>{
+      setLaptopdata([...products])
+    },[dispatch])
+
+    const handlecat=(category)=>{
+      let item =  products.filter((item)=> {return item.title === category})
+      setLaptopdata([...item])
+      
+    }
+
+    function handlesort(e){
+      if(laptopdata.length==0){
+        let x;
+        if(e.target.value === "asc"){
+         x = products.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
+        }
+        else if(e.target.value === "desc"){
+         x = products.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
+        }
+        setLaptopdata([...x]);
+      }
+      else{
+        let x;
+        if(e.target.value === "asc"){
+         x = laptopdata.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
+        }
+        else if(e.target.value === "desc"){
+         x = laptopdata.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
+        }
+        setLaptopdata([...x]);
+      }
+     }
+     
+     const carditem=(item)=>{
       return(
         <div className="card my-5 py-4" key={item.id} style={{width:" 18rem"}}>
     <img src={item.img} className="card-img-top" alt={item.title}/>
@@ -30,30 +62,7 @@ export const Laptop = () => {
   </div>
       )
     }
-     
-     function handlesort(e){
-       let x;
-       if(e.target.value === "asc"){
-        x = data.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
-       }
-       else if(e.target.value === "desc"){
-        x = data.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
-       }
-       setData([...x]);
-     }
-     
-      function handleFilter(e){
-        let x;
-        if(e.target.value === "all"){
-          x = filtering;
-        }
-        else{
-          x = filtering.filter((el) => {
-            return el.title === e.target.value;
-          })
-        }
-        setData(x);
-      }
+   
       return (
         <>
         
@@ -68,7 +77,9 @@ export const Laptop = () => {
                       <option value="asc">Ascending</option>
                       <option value="desc">Descending</option>
                    </select>
-                      <select onChange={handleFilter}>
+                      <select onChange={(e)=>{
+                handlecat(e.target.value)
+              }}>
               <option value="">Filter by title</option>
               <option value="all">All</option>
               <option value="Mac Book Air">Macbook Air</option>
@@ -84,7 +95,8 @@ export const Laptop = () => {
               {
                 loading?(<h2 className="load">loading...</h2> ):
                 (
-                products.map(carditem)
+                  laptopdata.length>0 ? laptopdata.map(carditem): products.map(carditem)
+                  // products.map(carditem)
               
               )}
               </div>

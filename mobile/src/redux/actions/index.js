@@ -1,34 +1,12 @@
 import axios from "axios"
 export const GET_DATA = 'GET_DATA'
+export const GET_DATA_IPAD = 'GET_DATA_IPAD'
+export const GET_DATA_LAPTOP = 'GET_DATA_LAPTOP'
 export const GET_PROD_DETAILS = 'GET_PROD_DETAILS'
 export const LOADING="LOADING"
-export const FILTERPRODUCTS = "FILTERPRODUCTS"
-
-export const filterstate = (products) => {
-    dispatch({
-        type: "FILTER",
-        payload: products
+export const CART_MOBILE = "CART_MOBILE"
 
 
-    })
-}
-
-
-export const filterproducts = (payload) => {
-    return {
-        type: FILTERPRODUCTS,
-         payload
-    }
-}
-    
-
-
-
-
-export const filterProducts = (cat) => (dispatch) => {
-
-    dispatch(filterproducts(cat))
-}
 
 //Products
 export const getProduct=(payload)=>({
@@ -36,6 +14,20 @@ export const getProduct=(payload)=>({
     payload
     })
 
+    export const getProductlaptop=(payload)=>({
+        type: GET_DATA_LAPTOP,
+        payload
+        })
+    
+        export const getProductipad=(payload)=>({
+            type: GET_DATA_IPAD,
+            payload
+            })
+            export const cartmobile=(payload)=>({
+                type: CART_MOBILE,
+                payload
+                })
+        
 export const getProductDetails=(payload)=>({
 type: GET_PROD_DETAILS,
 payload
@@ -100,13 +92,23 @@ export const mobiles_api=()=>(dispatch)=>{
 })
 
 }
+export const get_cart_data=()=>(dispatch)=>{
+ 
+    dispatch(loading())
+    axios.get('https://backend1242.herokuapp.com/mobilecart').then((res)=>{
+         console.log("cart",res.data)
+        dispatch(cartmobile(res.data))
+})
+
+}
+
 
 export const laptops_api=()=>(dispatch)=>{
 
     dispatch(loading())
     axios.get('https://backend1242.herokuapp.com/laptops').then((res)=>{
 
-        dispatch(getProduct(res.data))
+        dispatch(getProductlaptop(res.data))
 })
 
 }
@@ -115,7 +117,7 @@ export const ipads_api=()=>(dispatch)=>{
     dispatch(loading())
     axios.get('https://backend1242.herokuapp.com/ipads').then((res)=>{
 
-        dispatch(getProduct(res.data))
+        dispatch(getProductipad(res.data))
 })
 
 }

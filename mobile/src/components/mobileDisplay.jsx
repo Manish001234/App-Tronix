@@ -11,8 +11,8 @@ import { mobile_id } from '../redux/actions/index';
 const MobileDisplay = ({log}) => {
     const mobid = useParams();
     const[cartBtn,setcartBtn]=useState("Add To Cart")
-    const navigate = useNavigate();
     const [data, setData]=useState([])
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     
     const product=useSelector((store)=>store.reduce.product)
@@ -21,7 +21,7 @@ const MobileDisplay = ({log}) => {
     useEffect(()=>{
       dispatch(mobile_id(id))
     },[])
-
+     
     const handleCart=(data)=>{
         if(log){
             if(cartBtn === 'Add To Cart'){

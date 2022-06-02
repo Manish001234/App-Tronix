@@ -3,27 +3,54 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { filterProducts, getProduct } from "../redux/actions";
+
 import {mobiles_api} from "../redux/actions/index"
 import {loading} from "../redux/actions/index"
 
 
 
 function Product() {
-  const [data,setData]=useState([])
-  // const [filtering,setFiltering]=useState([products])
-  const [load , setLoad] = useState(null)
-  const {products,loading,filters} = useSelector((store) => store.reduce);
-  const dispatch = useDispatch();
 
+  const [load , setLoad] = useState(null)
+  const {products,loading} = useSelector((store) => store.reduce);
+  const [mobiledata,setMobiledata]=useState([...products])
+
+  const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(mobiles_api())
+    setMobiledata([...products])
+  },[dispatch])
   
-  },[])
-  // const [filtering,setFiltering]=useState([products])
-  console.log(filters,"apple")
-
-  const carditem=(item)=>{
+  const handlecat=(category)=>{
+   let item =  products.filter((item)=> {return item.title === category})
+   setMobiledata([...item])
+   
+ }
+   
+   function handlesort(e){
+    if(mobiledata.length==0){
+      let x;
+      if(e.target.value === "asc"){
+       x = products.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
+      }
+      else if(e.target.value === "desc"){
+       x = products.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
+      }
+      setMobiledata([...x]);
+    }
+    else{
+      let x;
+      if(e.target.value === "asc"){
+       x = mobiledata.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
+      }
+      else if(e.target.value === "desc"){
+       x = mobiledata.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
+      }
+      setMobiledata([...x]);
+    }
+   }
+   
+   const carditem=(item)=>{
     
     return(
       
@@ -37,37 +64,7 @@ function Product() {
 </div>
     )
   }
-   
-   function handlesort(e){
-     let x;
-     if(e.target.value === "asc"){
-      x = products.sort((a,b) => (+a.price.split(",").join(""))-(+b.price.split(",").join("")) )
-     }
-     else if(e.target.value === "desc"){
-      x = products.sort((a,b) => (+b.price.split(",").join(""))-(+a.price.split(",").join("")) )
-     }
-     setData([...x]);
-   }
-   
-    // function handleFilter(e){
-    //   let x;
-    //   if(e.target.value === "all"){
-    //     x = products;
-    //   }
-    //   else{
-    //     x = products.filter((el) => {
-    //       return el.title === e.target.value;
-    //     })
-    //   }
-    //   setData(x);
-    // }
-
-    const Filter = (item) => {
-    
-      dispatch(filterProducts(item))
-    
-  }
-    // console.log(mobile)
+  
     return (
       <>
       
@@ -82,7 +79,9 @@ function Product() {
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
                  </select>
-              <select onChange={Filter}>
+              <select onChange={(e)=>{
+                handlecat(e.target.value)
+              }}>
             <option value="">Filter by title</option>
             <option value="all">All</option>
             <option value="iphone 11">Iphone 11</option>
@@ -98,7 +97,9 @@ function Product() {
                 {
                 loading?(<h2 className="load">loading...</h2> ):(
                 
-                products?.filter((e) => e.title.includes(filters)).map(carditem)
+                  mobiledata.length>0 ? mobiledata.map(carditem): products.map(carditem)
+                  // products.map(carditem)
+                
                
               )}
             </div>

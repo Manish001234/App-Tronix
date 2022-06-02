@@ -1,8 +1,8 @@
-import {addItems, reducer} from "./addItem";
+import {addItems, reducer ,laptop,ipad,cartReducer} from "./addItem";
 import {combineReducers} from "redux";
 
 const rootReducers = combineReducers({
-    item:addItems, reduce:reducer
+    item:addItems, reduce:reducer ,laptops:laptop,ipads:ipad,cartdata:cartReducer
 })
 
 

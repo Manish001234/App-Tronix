@@ -62,7 +62,7 @@ const Checkout = () => {
                     id="firstName"
                     placeholder=""
                     value=""
-                    required="true"
+                    required 
                   />
                   <div className="invalid-feedback">
                     Valid first name is required.
@@ -79,7 +79,7 @@ const Checkout = () => {
                     id="lastName"
                     placeholder=""
                     value=""
-                    required=""
+                    required 
                   />
                   <div className="invalid-feedback">
                     Valid last name is required.
@@ -97,6 +97,7 @@ const Checkout = () => {
                     className="form-control"
                     id="email"
                     placeholder="you@example.com"
+                    required
                   />
                   <div className="invalid-feedback">
                     Please enter a valid email address htmlFor shipping updates.
@@ -111,8 +112,8 @@ const Checkout = () => {
                     type="text"
                     className="form-control"
                     id="address"
-                    placeholder="1234 Main St"
-                    required=""
+                    required  placeholder="1234 Main St"
+                   
                   />
                   <div className="invalid-feedback">
                     Please enter your shipping address.
@@ -127,7 +128,7 @@ const Checkout = () => {
                     type="text"
                     className="form-control"
                     id="address2"
-                    placeholder="Apartment or suite"
+                    placeholder="Apartment or suite" required
                   />
                 </div>
 
@@ -135,7 +136,7 @@ const Checkout = () => {
                   <label htmlFor="country" className="form-label">
                     Country
                   </label>
-                  <select className="form-select" id="country" required="">
+                  <select className="form-select" id="country" required>
                     <option value="">Choose...</option>
                     <option> India </option>
                   </select>
@@ -148,7 +149,7 @@ const Checkout = () => {
                   <label htmlFor="state" className="form-label">
                     State
                   </label>
-                  <select className="form-select" id="state" required="">
+                  <select className="form-select" id="state" required>
                     <option value="">Choose...</option>
                     <option>Hyderabad</option>
                   </select>
@@ -166,7 +167,7 @@ const Checkout = () => {
                     className="form-control"
                     id="zip"
                     placeholder=""
-                    required=""
+                    required
                   />
                   <div className="invalid-feedback">Zip code required.</div>
                 </div>
