@@ -33,7 +33,7 @@ const Login = ({setLog}) => {
         localStorage.setItem("app", JSON.stringify(data));
         setLog(true)
         alert("Successfully Loged-In")
-        navigate("/")
+        navigate("/mobiles")
       })
     }
     else{
@@ -46,9 +46,9 @@ const Login = ({setLog}) => {
     <div style={{margin:"auto",textAlign:"center"}}>
       <br />
       <h1>Login</h1>
-      <TextField name="email" onChange={handleChange} style={{width:"30%",margin:"25px 0"}} id="demo-helper-text-misaligned-no-helper" label="Email" />
+      <TextField name="email" onChange={handleChange} style={{width:"30%",margin:"25px 0"}} id="demo-helper-text-misaligned-no-helper" label="Email" placeholder='Enter Email' />
       <br />
-      <TextField name="password" onChange={handleChange} type="password"  style={{width:"30%"}} id="demo-helper-text-misaligned-no-helper" label="Password" />
+      <TextField name="password" onChange={handleChange} type="password"  style={{width:"30%"}} id="demo-helper-text-misaligned-no-helper" label="Password" placeholder='Enter Password' />
       <br />
       {state ? <p style={{color:"red"}}>{hidden}</p> : null}
       <br />

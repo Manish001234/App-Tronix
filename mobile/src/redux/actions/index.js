@@ -16,20 +16,20 @@ export const getProduct=(payload)=>({
     payload
     })
 
-    export const getProductlaptop=(payload)=>({
-        type: GET_DATA_LAPTOP,
+export const getProductlaptop=(payload)=>({
+    type: GET_DATA_LAPTOP,
+    payload
+    })
+
+export const getProductipad=(payload)=>({
+    type: GET_DATA_IPAD,
+    payload
+    })
+    export const cartmobile=(payload)=>({
+        type: CART_MOBILE,
         payload
         })
     
-        export const getProductipad=(payload)=>({
-            type: GET_DATA_IPAD,
-            payload
-            })
-            export const cartmobile=(payload)=>({
-                type: CART_MOBILE,
-                payload
-                })
-        
 export const getProductDetails=(payload)=>({
 type: GET_PROD_DETAILS,
 payload

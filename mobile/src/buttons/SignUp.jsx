@@ -40,11 +40,11 @@ const SignUp = () => {
     <div style={{margin:"auto",textAlign:"center"}}>
       <br />
       <h1>SignUp</h1>
-      <TextField name="name" onChange={handleChange} style={{width:"30%",margin:"25px 0"}} id="demo-helper-text-misaligned-no-helper" label="Name" />
+      <TextField name="name" onChange={handleChange} style={{width:"30%",margin:"25px 0"}} id="demo-helper-text-misaligned-no-helper" label="Name" placeholder='Enter Full Name' />
       <br />
-      <TextField name="email" type="email" onChange={handleChange} style={{width:"30%",marginBottom:"25px"}} id="demo-helper-text-misaligned-no-helper" label="Email" />
+      <TextField name="email" type="email" onChange={handleChange} style={{width:"30%",marginBottom:"25px"}} id="demo-helper-text-misaligned-no-helper" label="Email" placeholder='Enter Email' />
       <br />
-      <TextField name="password" onChange={handleChange} type="password"  style={{width:"30%"}} id="demo-helper-text-misaligned-no-helper" label="Password" />
+      <TextField name="password" onChange={handleChange} type="password"  style={{width:"30%"}} id="demo-helper-text-misaligned-no-helper" label="Password" placeholder='Enter Password' />
       <br />
       <br />
       {state ? <p style={{color:"red"}}>please fill all the details</p> : null}

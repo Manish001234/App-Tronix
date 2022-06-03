@@ -1,9 +1,35 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Checkout = () => {
+
+  const navigate = useNavigate()
+
+//   const [ formData , setFormData] = React.useState({
+//     firstName : "",
+//     lastName : "",
+//     address :"",
+//     country : "",
+//     state:""
+// })
+
+// const HandleChange = (e) => {
+
+//   const {id,value} = e.target;
+//   setFormData({...formData , [id] : value})
+// }
+const handleSubmit=(e)=>{
+  e.preventDefault();
+      navigate("/Payment")
+  // console.log("hello",formData)
+//   if(formData.firstName !== "" && formData.lastName !== ""  && formData.address !== ""  ){
+//     navigate("/Payment")
+// }
+}
+
+
     const state = useSelector((store)=>store.item)
     var total = 0;
     const itemList=(item)=>{
@@ -35,7 +61,7 @@ const Checkout = () => {
               </li>
             </ul>
 
-            <form className="card p-2">
+            <form className="card p-2" onSubmit={handleSubmit}>
               <div className="input-group">
                 <input
                   type="text"
@@ -50,9 +76,9 @@ const Checkout = () => {
           </div>
           <div className="col-md-7 col-lg-8">
             <h4 className="mb-3 ">Billing address</h4>
-            <form className="needs-validation" novalidate="">
+            <form className="needs-validation" onSubmit={handleSubmit} >
               <div className="row g-3">
-                <div className="col-sm-6">
+                {/* <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">
                     First name
                   </label>
@@ -62,14 +88,15 @@ const Checkout = () => {
                     id="firstName"
                     placeholder=""
                     value=""
-                    required 
+                    // required 
+                    
                   />
                   <div className="invalid-feedback">
                     Valid first name is required.
                   </div>
-                </div>
+                </div> */}
 
-                <div className="col-sm-6">
+                {/* <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">
                     Last name
                   </label>
@@ -79,18 +106,19 @@ const Checkout = () => {
                     id="lastName"
                     placeholder=""
                     value=""
-                    required 
+                    // required 
+                    // onChange={HandleChange}
                   />
                   <div className="invalid-feedback">
                     Valid last name is required.
                   </div>
-                </div>
+                </div> */}
 
            
 
                 <div className="col-12">
                   <label htmlFor="email" className="form-label">
-                    Email <span className="text-muted">(Optional)</span>
+                    Email <span className="text-muted"></span>
                   </label>
                   <input
                     type="email"
@@ -113,6 +141,7 @@ const Checkout = () => {
                     className="form-control"
                     id="address"
                     required  placeholder="1234 Main St"
+                    // onChange={HandleChange}
                    
                   />
                   <div className="invalid-feedback">
@@ -128,7 +157,7 @@ const Checkout = () => {
                     type="text"
                     className="form-control"
                     id="address2"
-                    placeholder="Apartment or suite" required
+                    placeholder="Apartment or suite" 
                   />
                 </div>
 
@@ -136,7 +165,7 @@ const Checkout = () => {
                   <label htmlFor="country" className="form-label">
                     Country
                   </label>
-                  <select className="form-select" id="country" required>
+                  <select className="form-select" id="country"  required>
                     <option value="">Choose...</option>
                     <option> India </option>
                   </select>
@@ -149,7 +178,7 @@ const Checkout = () => {
                   <label htmlFor="state" className="form-label">
                     State
                   </label>
-                  <select className="form-select" id="state" required>
+                  <select className="form-select" id="state"  required>
                     <option value="">Choose...</option>
                     <option>Hyderabad</option>
                   </select>
@@ -173,11 +202,12 @@ const Checkout = () => {
                 </div>
               </div>
               <hr className="my-4" />
-               <Link to={"/Payment"}>
+               {/* <Link to={"/Payment"}>
                <button className="w-100 btn btn-outline-primary btn-lg" type="submit">
                 Continue to Payment
               </button>
-               </Link>
+               </Link> */}
+               <input  className="w-100 btn btn-outline-primary btn-lg" type="submit" value="submit" onSubmit={handleSubmit} />
               
             </form>
           </div>

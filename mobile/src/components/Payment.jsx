@@ -59,21 +59,29 @@ return (
     <TextField className="inputIs" onChange={HandleChange}
       id="name"
       label="Name"
+      type="text"
+      placeholder="Full Name" 
     /> 
 
    <TextField className="inputIs" onChange={HandleChange}
       id="cardNo"
       label="Card Number"
+      type="number"
+      placeholder="1234 5678 9123 4566"
     /> 
 
     <TextField className="inputIs" onChange={HandleChange}
       id="expiry"
       label="Expiry Date"
+
+      placeholder="MM/YYYY"
     /> 
 
     <TextField className="inputIs" onChange={HandleChange}
       id="cvv"
-      label="CVV"
+      label="CVV/CVC"
+      type="password"
+      placeholder="***"
     /> 
   
    {/* ---------------------- Button --------------------------------------- */}
