@@ -32,7 +32,7 @@ const initialState={
           case LOGIN:
             return {
                 ...state,
-                user: action.payload,
+                user:payload,
                 isLoggedIn: true
             }
           
