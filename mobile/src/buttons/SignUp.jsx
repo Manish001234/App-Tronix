@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import {useState} from "react";
 import axios from 'axios';
+import { signupRequest } from '../redux/actions';
 
 
 const SignUp = () => {

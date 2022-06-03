@@ -5,6 +5,8 @@ export const GET_DATA_LAPTOP = 'GET_DATA_LAPTOP'
 export const GET_PROD_DETAILS = 'GET_PROD_DETAILS'
 export const LOADING="LOADING"
 export const CART_MOBILE = "CART_MOBILE"
+export const LOGIN ="LOGIN"
+export const SIGNUP ="SIGNUP"
 
 
 
@@ -58,6 +60,21 @@ export const deletecart = (data) => {
     return {
         type: "DELETECART",
         payload:data
+    }
+}
+
+//LOGIN
+export const loginRequest = (user) => {
+    return {
+        type: LOGIN,
+        payload: user
+    }
+}
+
+export const signupRequest = (user) => {
+    return {
+        type: SIGNUP,
+        payload: user
     }
 }
 

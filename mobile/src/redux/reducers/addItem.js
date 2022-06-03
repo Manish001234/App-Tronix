@@ -3,13 +3,17 @@ import { GET_PROD_DETAILS } from "../actions/index";
 import { GET_DATA_IPAD } from "../actions/index";
 import { GET_DATA_LAPTOP } from "../actions/index";
 import { CART_MOBILE } from "../actions/index";
+import { LOGIN } from "../actions/index";
+import { SIGNUP } from "../actions/index";
 
 // import { FILTERPRODUCTS } from "../actions/index";
 const initialState={
     products:[]  ,
     product:{},
     loading:false,
-    filters:""
+    filters:"",
+    users:[],
+    user:null,
     
 
   }
@@ -24,7 +28,19 @@ const initialState={
   switch(type){
       case CART_MOBILE:
           return {...state,cartdata:[payload]};
+
+          case LOGIN:
+            return {
+                ...store,
+                user: action.payload,
+                isLoggedIn: true
+            }
           
+
+            case SIGNUP:
+                return { "users": payload};
+
+
           default:
               return state;
   
