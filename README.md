@@ -50,7 +50,7 @@
  <h3 align="center">Want to see live preview »</h3>
 <p align="center"> 
     <br />
-    <a target="blank" href="https://app-manishreddy.vercel.app/">Deployed Link</a>    
+    <a target="blank" href="https://app-tronix-fullstack8-7e7e5v52l-manishreddy.vercel.app/">Deployed Link</a>    
     
  </p>
   
