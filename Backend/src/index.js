@@ -1,5 +1,6 @@
 const express = require('express');
 const connect = require('./configs/db');
+const cors= require("cors")
 
 const app = express();
 // require("dotenv").config()
@@ -19,6 +20,7 @@ app.use("/mobiles",MobileController);
 app.use("/Ipads",IpadController);
 app.use("/laptops",LaptopController);
 app.use("/mobilecart",CartMobileController)
+app.use(cors());
 
 
 
