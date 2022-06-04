@@ -8,6 +8,7 @@ const port=process.env.PORT || 2345
 
 app.use(express.json());
 app.use(express.static("public"))
+app.use(cors());
 
 const UserController = require('./controllers/user.controller')
 const MobileController = require('./controllers/mobile.controller')
@@ -20,7 +21,7 @@ app.use("/mobiles",MobileController);
 app.use("/Ipads",IpadController);
 app.use("/laptops",LaptopController);
 app.use("/mobilecart",CartMobileController)
-app.use(cors());
+
 
 
 
