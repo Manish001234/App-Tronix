@@ -103,7 +103,7 @@ export const loading =()=>{
 export const mobiles_api=()=>(dispatch)=>{
 
     dispatch(loading())
-    axios.get('https://backend1242.herokuapp.com/mobiles').then((res)=>{
+    axios.get('https://faithful-teal-iguana.cyclic.app/mobiles').then((res)=>{
 
         dispatch(getProduct(res.data))
 })
@@ -112,7 +112,7 @@ export const mobiles_api=()=>(dispatch)=>{
 export const get_cart_data=()=>(dispatch)=>{
  
     dispatch(loading())
-    axios.get('https://backend1242.herokuapp.com/mobilecart').then((res)=>{
+    axios.get('https://faithful-teal-iguana.cyclic.app/mobilecart').then((res)=>{
          console.log("cart",res.data)
         dispatch(cartmobile(res.data))
 })
@@ -123,7 +123,7 @@ export const get_cart_data=()=>(dispatch)=>{
 export const laptops_api=()=>(dispatch)=>{
 
     dispatch(loading())
-    axios.get('https://backend1242.herokuapp.com/laptops').then((res)=>{
+    axios.get('https://faithful-teal-iguana.cyclic.app/laptops').then((res)=>{
 
         dispatch(getProductlaptop(res.data))
 })
@@ -132,7 +132,7 @@ export const laptops_api=()=>(dispatch)=>{
 export const ipads_api=()=>(dispatch)=>{
 
     dispatch(loading())
-    axios.get('https://backend1242.herokuapp.com/ipads').then((res)=>{
+    axios.get('https://faithful-teal-iguana.cyclic.app/ipads').then((res)=>{
 
         dispatch(getProductipad(res.data))
 })
@@ -142,19 +142,19 @@ export const ipads_api=()=>(dispatch)=>{
 //SingleProduct Api
 
 export const mobile_id = (id) => (dispatch) => {
-    axios.get(`https://backend1242.herokuapp.com/mobiles/${id}`).then((res) => {
+    axios.get(`https://faithful-teal-iguana.cyclic.app/mobiles/${id}`).then((res) => {
         dispatch(getProductDetails(res.data))
     })
 
 }
 export const laptop_id = (id) => (dispatch) => {
-    axios.get(`https://backend1242.herokuapp.com/laptops/${id}`).then((res) => {
+    axios.get(`https://faithful-teal-iguana.cyclic.app/laptops/${id}`).then((res) => {
         dispatch(getProductDetails(res.data))
     })
 
 }
 export const ipad_id = (id) => (dispatch) => {
-    axios.get(`https://backend1242.herokuapp.com/ipads/${id}`).then((res) => {
+    axios.get(`https://faithful-teal-iguana.cyclic.app/ipads/${id}`).then((res) => {
         dispatch(getProductDetails(res.data))
     })
 
